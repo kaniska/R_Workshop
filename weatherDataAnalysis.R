@@ -22,3 +22,8 @@ max(na.exclude(x$Ozone[x$Month == 5]))
 x <- 1:4
 y <- 2:3
 z <- x + y
+#
+factors <- function(x) {
+  colMeans(x)
+  x <- subset(data, Ozone > 1 & Temp > 90)
+}
