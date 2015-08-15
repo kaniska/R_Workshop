@@ -110,3 +110,90 @@ f <- function(x, y) {
 # All objects must be stored in memory.
 # Problem 10.
 # parent theme: it is the environment in which a function was called.
+
+  my_vector <- 1:20
+// now change it to matrix format with 4 rows , 5 cols
+dim(my_vector) <- c(4, 5)
+dim(my_vector)
+4 5
+
+> attributes(my_vector)
+$dim
+[1] 4 5
+
+> my_vector
+[,1] [,2] [,3] [,4] [,5]
+[1,]    1    5    9   13   17
+[2,]    2    6   10   14   18
+[3,]    3    7   11   15   19
+[4,]    4    8   12   16   20
+
+class(my_vector)
+matrix
+
+matrix(1:20, 4, 5)
+///////
+  patients <- c(Bill, "Gina", "Kelly", "Sean")
+
+  cbind() function to 'combine columns'
+
+> cbind(patients, my_matrix)
+patients                       
+[1,] "Bill"   "1" "5" "9"  "13" "17"
+[2,] "Gina"   "2" "6" "10" "14" "18"
+[3,] "Kelly"  "3" "7" "11" "15" "19"
+[4,] "Sean"   "4" "8" "12" "16" "20"
+
+This means we're left with a matrix of character strings, which is no
+| good.
+////////////////
+  >>  matrices can only contain ONE class of data.
+  my_data <- data.frame(patients, my_matrix)
+
+how to include the names of our patients in the table without destroying the integrity of our numeric data
+/////
+
+cnames <- c("patient", "age", "weight", "bp", "rating", "test")
+colnames(my_data) <- cnames
+
+object.size(plants)
+
+head(plants, 10)
+
+summary()
+/// generaate sample data  :
+
+four six-sided dice: sample(1:6, 4, replace = TRUE)
+
+sample 4 numbers between 1 to 6
+
+//// 100 flips of unfair 2-sided coins .... 0.3 for tails, 0.7 for heads 
+flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
+
+sum(flips)
+
+A coin flip is a binary outcome (0 or 1) and we are performing 100
+| independent trials (coin flips), so we can use use rbinom() to simulate a
+| binomial random variable.
+
+the number of heads in 100 flips of our unfair coin 
+=>  rbinom(1, size = 100, prob = 0.7)  ~  71
+
+flips2 <- rbinom(100, size = 1, prob = 0.7)
+
+If ‘mean’ or ‘sd’ are not specified they assume the default values of ‘0’ and ‘1’, respectively.
+
+The normal distribution has density  f(x) = 1/(sqrt(2 pi) sigma) e^-((x - mu)^2/(2 sigma^2)) 
+
+>>>>  rnorm(10, mean = 100, sd = 25)
+
+my_pois <- replicate(100, rpois(5, 10))
+cm <- colMeans(my_pois)
+Looks like our column means are almost normally distributed, right? That's
+| the Central Limit Theorem at work
+
+exponential (rexp()), chi-squared (rchisq()), gamma (rgamma())
+
+
+/// Simulation
+lattice, ggplo
