@@ -1,0 +1,5 @@
+Dataset  <-  read.csv('data/getdata-data-ss06hid.csv')
+head(Dataset,1)
+strsplit(names(Dataset), "wgtp")
+result  <- strsplit(names(Dataset), "wgtp")
+print(result[123])
